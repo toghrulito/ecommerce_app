@@ -17,7 +17,7 @@ public class Order extends BaseEntity {
 
     private BigDecimal paidPrice;
     private BigDecimal totalPrice;
-    @OneToOne
+    @ManyToOne
     private Cart cart;
     @ManyToOne
     private Customer customer;
