@@ -1,9 +1,7 @@
 package com.eccom.Entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,10 +11,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Category extends BaseEntity {
-
-    private String name;
-
-
-
+public class CartItem extends BaseEntity {
+    private Integer quantity;
+    @ManyToOne
+    private Cart cart;
+    @ManyToOne
+    private Product product;
 }

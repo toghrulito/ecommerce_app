@@ -7,16 +7,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
 @Entity
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "orders")
+public class Order extends BaseEntity {
 
-public class Balance extends BaseEntity {
-
-    private BigDecimal amount;
+    private BigDecimal paidPrice;
+    private BigDecimal totalPrice;
     @OneToOne
+    private Cart cart;
+    @ManyToOne
     private Customer customer;
+    @OneToOne
+    private Payment payment;
+
 }
